@@ -27,3 +27,6 @@ Para detalhes tecnicos sobre como conectar esta pagina ao Meta Ads, WhatsApp, Te
 
 ## Conformidade Etica
 O marketing e estritamente informativo, conforme o Provimento 205/2021 da OAB, focando em educar o cliente sobre riscos e solucoes juridicas.
+
+
+<!-- deploy trigger -->
