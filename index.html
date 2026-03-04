@@ -17,139 +17,158 @@
             --bg-card: #1c1f22;
             --border: rgba(197, 160, 89, 0.15);
         }
-
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body { 
-            background-color: var(--gunmetal); 
-            color: var(--text-light); 
-            line-height: 1.6; 
-            font-family: 'Montserrat', sans-serif;
-            overflow-x: hidden;
-        }
-
+        body { background-color: var(--gunmetal); color: var(--text-light); line-height: 1.6; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
         h1, h2, h3, .brand { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
-        
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
-
+        
         /* Navigation */
         nav { padding: 30px 0; background: transparent; position: absolute; width: 100%; top: 0; z-index: 100; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-size: 1.8rem; color: var(--gold); }
+        .brand { font-size: 1.5rem; color: var(--gold); text-decoration: none; }
+        .nav-links { display: flex; gap: 30px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .nav-links a:hover { color: var(--gold); }
 
-        /* Hero (Ref: viniciussnunes) */
-        .hero { 
-            height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            background: linear-gradient(90deg, #121416 40%, rgba(18,20,22,0.6) 100%), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1920&q=80'); 
-            background-size: cover; 
-            background-position: center right;
-            position: relative;
-        }
-        .hero-content { max-width: 600px; }
-        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; color: #fff; }
-        .hero h1 span { color: var(--gold); }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 300; border-left: 2px solid var(--gold); padding-left: 20px; }
+        /* Hero */
+        .hero { height: 100vh; background: linear-gradient(rgba(18,20,22,0.8), rgba(18,20,22,0.8)), url('https://images.unsplash.com/photo-1589829545856-d10d557cf95f?ixlib=rb-1.2.1&auto=format&fit=crop&w=1350&q=80'); background-size: cover; background-position: center; display: flex; align-items: center; text-align: center; }
+        .hero-content h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; color: var(--text-light); }
+        .hero-content p { font-size: 1.2rem; color: var(--text-muted); max-width: 800px; margin: 0 auto 40px; }
+        .btn { padding: 18px 40px; border-radius: 4px; text-decoration: none; font-weight: 600; text-transform: uppercase; letter-spacing: 2px; transition: 0.4s; display: inline-block; cursor: pointer; border: none; }
+        .btn-primary { background: var(--gold); color: white; border: 1px solid var(--gold); }
+        .btn-primary:hover { background: transparent; color: var(--gold); box-shadow: 0 0 20px rgba(197,160,89,0.3); }
 
-        .btn-primary { 
-            display: inline-block; background: var(--gold); color: var(--gunmetal); 
-            padding: 18px 45px; text-decoration: none; font-weight: 700; 
-            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;
-            transition: 0.3s; border: 1px solid var(--gold);
-        }
-        .btn-primary:hover { background: transparent; color: var(--gold); }
+        /* Sections */
+        section { padding: 100px 0; border-bottom: 1px solid var(--border); }
+        .section-title { text-align: center; margin-bottom: 60px; }
+        .section-title h2 { font-size: 2.5rem; color: var(--gold); margin-bottom: 15px; }
+        .section-title p { color: var(--text-muted); font-size: 1.1rem; }
 
-        /* Service Cards (Ref Style) */
-        .section { padding: 120px 0; }
-        .section-header { text-align: center; margin-bottom: 80px; }
-        .section-header h2 { font-size: 2.2rem; margin-bottom: 15px; color: var(--gold); }
-        .section-header p { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+        /* Cards */
+        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
+        .card { background: var(--bg-card); padding: 50px 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.5s; text-align: center; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
+        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 25px; }
+        .card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--gold-light); }
+        .card p { color: var(--text-muted); font-size: 0.95rem; }
 
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
-        .card { 
-            background: var(--bg-card); padding: 50px 40px; border: 1px solid var(--border); 
-            transition: 0.4s; text-align: center; position: relative; overflow: hidden;
-        }
-        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: 0.4s; }
-        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
-        .card:hover::before { transform: scaleX(1); }
+        /* Qualification Form (New) */
+        .qualification-section { background: var(--wood); position: relative; overflow: hidden; }
+        .qualification-section::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: url('https://www.transparenttextures.com/patterns/dark-leather.png'); opacity: 0.1; }
+        .form-card { background: var(--gunmetal); border: 1px solid var(--gold); padding: 50px; border-radius: 4px; max-width: 700px; margin: 0 auto; min-height: 400px; position: relative; z-index: 1; box-shadow: 0 20px 50px rgba(0,0,0,0.5); }
+        .form-step { display: none; animation: fadeIn 0.6s ease-out; }
+        .form-step.active { display: block; }
+        .form-step h2 { font-size: 1.8rem; color: var(--gold-light); margin-bottom: 30px; text-align: center; }
+        .form-input { width: 100%; padding: 18px; background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: white; margin-bottom: 30px; border-radius: 4px; font-size: 1.1rem; font-family: 'Montserrat', sans-serif; transition: 0.3s; }
+        .form-input:focus { outline: none; border-color: var(--gold); background: rgba(255,255,255,0.07); }
+        .option-grid { display: grid; grid-template-columns: 1fr; gap: 15px; margin-bottom: 30px; }
+        .option-btn { background: transparent; border: 1px solid var(--border); color: var(--text-light); padding: 20px; border-radius: 4px; cursor: pointer; transition: 0.3s; font-size: 1.1rem; text-align: left; display: flex; justify-content: space-between; align-items: center; }
+        .option-btn:hover { border-color: var(--gold); background: rgba(197,160,89,0.05); }
+        .option-btn::after { content: '→'; opacity: 0; transition: 0.3s; color: var(--gold); }
+        .option-btn:hover::after { opacity: 1; padding-left: 10px; }
         
-        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 30px; }
-        .card h3 { font-size: 1.4rem; margin-bottom: 20px; color: #fff; }
-        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px; }
-        
-        .card-link { 
-            color: var(--gold); text-decoration: none; font-weight: 600; 
-            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;
-            border-bottom: 1px solid var(--gold); padding-bottom: 5px;
-        }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
 
-        /* OAB Compliance Section */
-        .oab-note { background: var(--wood); padding: 80px 0; border-top: 1px solid var(--border); }
-        .oab-content { text-align: center; }
-        .oab-content p { font-style: italic; color: var(--gold-light); font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
-
-        footer { padding: 60px 0; text-align: center; background: #000; color: var(--text-muted); font-size: 0.8rem; }
-        .footer-logo { font-size: 1.5rem; color: var(--gold); margin-bottom: 15px; }
+        /* Footer */
+        footer { padding: 60px 0; background: #000; text-align: center; color: var(--text-muted); font-size: 0.9rem; }
+        .footer-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2.5rem; }
-            .hero { background-position: center; }
+            .hero-content h1 { font-size: 2.5rem; }
+            .grid { grid-template-columns: 1fr; }
+            .form-card { padding: 30px; }
         }
     </style>
 </head>
 <body>
-
     <nav>
         <div class="container nav-content">
-            <div class="brand">DV ADVOGA</div>
-            <div style="font-size: 0.8rem; letter-spacing: 2px; color: var(--gold);">EXCELÊNCIA JURÍDICA</div>
+            <a href="#" class="brand">DV ADVOGA</a>
+            <div class="nav-links">
+                <a href="#especialidades">Especialidades</a>
+                <a href="#diagnostico">Diagnóstico</a>
+            </div>
         </div>
     </nav>
 
     <section class="hero">
-        <div class="container">
-            <div class="hero-content">
-                <h1>Segurança <span>Patrimonial</span> e Legado Familiar</h1>
-                <p>Estratégias jurídicas personalizadas para a proteção de bens e sucessão inteligente. Orientação técnica baseada na autoridade e no sigilo absoluto.</p>
-                <a href="#diagnostico" class="btn-primary">Solicitar Diagnóstico Técnico</a>
-            </div>
+        <div class="container hero-content">
+            <h1>SEGURANÇA PATRIMONIAL<br>E LEGADO FAMILIAR</h1>
+            <p>Estratégias jurídicas personalizadas para a proteção de bens e sucessão inteligente. Orientação técnica baseada na autoridade e no sigilo absoluto.</p>
+            <a href="#diagnostico" class="btn btn-primary">Solicitar Diagnóstico Técnico</a>
         </div>
     </section>
 
-    <section class="section">
+    <section id="especialidades">
         <div class="container">
-            <div class="section-header">
-                <h2>Conheça Nossas Especialidades</h2>
+            <div class="section-title">
+                <h2>Nossas Especialidades</h2>
                 <p>Informação qualificada para decisões de alto impacto patrimonial.</p>
             </div>
             <div class="grid">
                 <div class="card">
-                    <i class="fas fa-shield-halved"></i>
-                    <h3>Holding Familiar</h3>
+                    <i class="fas fa-landmark"></i>
+                    <h3>HOLDING FAMILIAR</h3>
                     <p>Estruturação societária focada na preservação de ativos e eficiência tributária na sucessão.</p>
-                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
                 <div class="card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>Blindagem Jurídica</h3>
+                    <i class="fas fa-shield-alt"></i>
+                    <h3>BLINDAGEM JURÍDICA</h3>
                     <p>Isolamento de riscos operacionais para garantir a integridade dos bens conquistados.</p>
-                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
                 <div class="card">
                     <i class="fas fa-scroll"></i>
-                    <h3>Sucessão Ética</h3>
+                    <h3>SUCESSÃO ÉTICA</h3>
                     <p>Planejamento sucessório preventivo para evitar litígios e garantir a continuidade do legado.</p>
-                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="oab-note" id="diagnostico">
-        <div class="container oab-content">
-            <p>"O planejamento patrimonial não é apenas uma estratégia financeira, é um ato de cuidado com o seu legado e a tranquilidade da sua família. Nossa missão é oferecer o respaldo jurídico necessário para que sua sucessão ocorra de forma segura e econômica."</p>
-            <a href="https://wa.me/seu-numero" class="btn-primary" style="margin-top: 40px;">Falar com Especialista</a>
+    <section id="diagnostico" class="qualification-section">
+        <div class="container">
+            <div class="form-card" id="form-container">
+                <!-- Step 1 -->
+                <div id="step-1" class="form-step active">
+                    <h2>Para iniciarmos, qual o seu nome completo?</h2>
+                    <input type="text" id="lead-name" placeholder="Digite seu nome aqui..." class="form-input">
+                    <button class="btn btn-primary" style="width: 100%;" onclick="nextStep(2)">Continuar</button>
+                </div>
+
+                <!-- Step 2 -->
+                <div id="step-2" class="form-step">
+                    <h2>Qual o valor estimado do patrimônio a ser protegido?</h2>
+                    <div class="option-grid">
+                        <button class="option-btn" onclick="setOption('patrimonio', 'Até R$ 1 Milhão', 3)">Até R$ 1 Milhão</button>
+                        <button class="option-btn" onclick="setOption('patrimonio', 'Entre R$ 1M e R$ 5M', 3)">Entre R$ 1M e R$ 5M</button>
+                        <button class="option-btn" onclick="setOption('patrimonio', 'Acima de R$ 5 Milhões', 3)">Acima de R$ 5 Milhões</button>
+                    </div>
+                </div>
+
+                <!-- Step 3 -->
+                <div id="step-3" class="form-step">
+                    <h2>Qual o seu principal objetivo hoje?</h2>
+                    <div class="option-grid">
+                        <button class="option-btn" onclick="setOption('objetivo', 'Proteção de Bens (Blindagem)', 4)">Proteção de Bens (Blindagem)</button>
+                        <button class="option-btn" onclick="setOption('objetivo', 'Redução de Impostos (Holding)', 4)">Redução de Impostos (Holding)</button>
+                        <button class="option-btn" onclick="setOption('objetivo', 'Planejamento de Herança', 4)">Planejamento de Herança</button>
+                    </div>
+                </div>
+
+                <!-- Step 4 -->
+                <div id="step-4" class="form-step">
+                    <h2>Qual sua profissão ou área de atuação?</h2>
+                    <input type="text" id="lead-profession" placeholder="Ex: Empresário, Produtor Rural..." class="form-input">
+                    <button class="btn btn-primary" style="width: 100%;" onclick="nextStep(5)">Continuar</button>
+                </div>
+
+                <!-- Step 5 -->
+                <div id="step-5" class="form-step">
+                    <h2>Informe seu WhatsApp para o diagnóstico:</h2>
+                    <input type="tel" id="lead-whatsapp" placeholder="(00) 00000-0000" class="form-input">
+                    <button class="btn btn-primary" style="width: 100%;" onclick="finishForm()">Falar com Especialista agora</button>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -157,9 +176,55 @@
         <div class="container">
             <div class="footer-logo">DV</div>
             <p>DV Advogados Associados - OAB/RN XXX.XXX</p>
-            <p style="margin-top: 10px;">© 2026. Conteúdo informativo em conformidade com o Código de Ética e Disciplina da OAB.</p>
+            <p style="margin-top: 10px; opacity: 0.6;">© 2026. Conteúdo informativo em conformidade com o Código de Ética e Disciplina da OAB.</p>
         </div>
     </footer>
 
+    <script>
+        let leadData = {};
+
+        function nextStep(step) {
+            if (step === 2 && !document.getElementById('lead-name').value) {
+                alert('Por favor, informe seu nome.');
+                return;
+            }
+            if (step === 5 && !document.getElementById('lead-profession').value) {
+                alert('Por favor, informe sua profissão.');
+                return;
+            }
+
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            document.getElementById('step-' + step).classList.add('active');
+            
+            // Scroll suave para o topo do formulário se necessário
+            document.getElementById('diagnostico').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function setOption(key, value, next) {
+            leadData[key] = value;
+            nextStep(next);
+        }
+
+        function finishForm() {
+            const name = document.getElementById('lead-name').value;
+            const profession = document.getElementById('lead-profession').value;
+            const whatsapp = document.getElementById('lead-whatsapp').value;
+
+            if (!whatsapp) {
+                alert('Por favor, informe seu WhatsApp.');
+                return;
+            }
+
+            const message = `Olá! Acabei de completar o diagnóstico no site.\n\n` +
+                          `*Nome:* ${name}\n` +
+                          `*Patrimônio:* ${leadData.patrimonio}\n` +
+                          `*Objetivo:* ${leadData.objetivo}\n` +
+                          `*Profissão:* ${profession}\n` +
+                          `*WhatsApp:* ${whatsapp}`;
+            
+            const encodedMsg = encodeURIComponent(message);
+            window.open(`https://wa.me/558499999999?text=${encodedMsg}`, '_blank');
+        }
+    </script>
 </body>
 </html>
