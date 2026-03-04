@@ -1,21 +1,22 @@
-# Nexu - Planejamento Patrimonial e Sucessorio de Alto Nivel
+# DV Advoga - Planejamento Patrimonial e Sucessorio de Elite
 
-Este repositorio abriga o projeto da landing page institucional da Nexu Advogados. O foco aqui e a captacao qualificada de leads com alto patrimonio, utilizando uma linguagem sobria, direta e profissional.
+Este repositorio abriga o projeto da landing page institucional da **DV Advoga**. O projeto foi refatorado com foco em autoridade premium e captacao qualificada de leads de alto patrimonio, inspirando-se em benchmarks de alta conversao do mercado.
 
 ## Identidade Visual e Conceito
-A pagina foi construida com uma paleta de cores focada em seriedade e autoridade:
-* **Cinza Chumbo:** Transmite solidez e modernidade.
-* **Madeira (Mahogany):** Remete ao ambiente tradicional e seguro de escritórios de advocacia de elite.
-* **Ouro:** Simboliza a preservação do valor e a excelência dos serviços prestados.
+A pagina utiliza uma paleta de cores voltada para seriedade, tradicao e valor:
+* **Cinza Chumbo:** Solidez e autoridade.
+* **Madeira:** Conforto, seguranca e tradicao juridica.
+* **Ouro:** Excelencia e preservacao de legado.
 
-## Estrutura de Captacao Qualificada
-Diferente de paginas de massa, a Nexu utiliza um formulario de pre-qualificacao diretamente na interface:
-* **Segmentacao por Patrimonio:** Filtra leads conforme o volume de bens.
-* **Segmentacao por Renda:** Identifica a capacidade financeira e o perfil do cliente.
-* **Urgencia Estrategica:** Direciona o atendimento para a dor principal (Holding, Blindagem, etc).
+## Estrutura de Captacao (Funil de Autoridade)
+Inspirado na estrutura de `viniciussnunes.com.br`, o site foca no **Personal Branding** e no **Diagnostico Tecnico**:
+* **Hero de Autoridade:** Apresentacao do advogado/escritorio como solucao tecnica de elite.
+* **Service Cards:** Detalhamento informativo de Holding Familiar, Blindagem Juridica e Sucessao.
+* **Conformidade OAB:** Linguagem estritamente informativa e sobria, evitando apelos comerciais agressivos.
 
-## Objetivo do Negocio
-O objetivo central e transformar trafego frio e qualificado em reunioes de diagnostico estrategico, eliminando curiosos e focando em clientes que buscam seguranca juridica para seus maiores ativos.
+## Documentacao Adicional
+* `PLANNING_DV.md`: Planejamento detalhado sob as oticas de Projeto, SEO e Front-end.
+* `STACK.md`: Infraestrutura tecnologica sugerida para o ecossistema DV Advoga.
 
-## Documentacao Tecnica
-O projeto utiliza HTML5 puro, CSS3 com variaveis customizadas para facilitar ajustes de marca e fontes elegantes (Cinzel e Montserrat) para garantir uma leitura confortavel e imponente.
+## Objetivo
+Transformar o interesse inicial em uma consulta tecnica qualificada, garantindo que o lead entenda o valor do planejamento preventivo antes de qualquer contato comercial.
