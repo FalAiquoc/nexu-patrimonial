@@ -16,11 +16,9 @@ Transformar o trafego qualificado em leads de alto valor (High-Ticket), focando 
 ### 2. Persona Alvo (ICP)
 * Perfil: Empresarios PMEs (Faturamento R$50k - R$200k/mes).
 * Localizacao: Natal/RN (Foco Ponta Negra) e expansao nacional.
-* Dores: Inseguranca patrimonial, medo de processos trabalhistas/tributarios atingirem bens pessoais, falta de planejamento sucessorio.
 
-### 3. Diretrizes de Design
-* Paleta de Cores: Deep Navy (#0a1118) e Gold Accent (#c5a059) para transmitir sobriedade, luxo e confianca.
-* Tipografia: Playfair Display para titulos (elegancia juridica) e Sans-serif para corpo de texto (clareza).
+## Integracoes e CRM
+Para detalhes tecnicos sobre como conectar esta pagina ao Meta Ads, WhatsApp, Telegram e CRM, consulte o documento: [STACK.md](STACK.md)
 
 ## Tecnologias
 - HTML5 / CSS3 Moderno
@@ -28,4 +26,4 @@ Transformar o trafego qualificado em leads de alto valor (High-Ticket), focando 
 - Google Fonts (Playfair Display)
 
 ## Conformidade Etica
-O marketing e estritamente informativo, conforme o Provimento 205/2021 da OAB, focando em educar o cliente sobre riscos e solucoes juridicas sem promessa de resultados ou mercantilizacao.
+O marketing e estritamente informativo, conforme o Provimento 205/2021 da OAB, focando em educar o cliente sobre riscos e solucoes juridicas.
