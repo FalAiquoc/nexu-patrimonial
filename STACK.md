@@ -1,33 +1,25 @@
-# Arquitetura de Integracao e CRM - DV Advoga
+# Arquitetura de Integracao e CRM - Nexu
 
-Este documento descreve como conectar a landing page aos canais de atendimento e gestao de leads para garantir que nenhum cliente high-ticket seja perdido no processo.
+Este documento detalha como integralizar a landing page Nexu aos sistemas de CRM e mensageria para um atendimento de elite.
 
-## 1. Fluxo de Dados Principal
-O fluxo foi desenhado para ser resiliente e automatizado:
-Meta Ads (Facebook/Instagram) -> Landing Page (Webhook/Form) -> CRM (Pipedrive/Notion) -> Alerta (WhatsApp/Telegram).
+## 1. Fluxo de Leads High-Ticket
+O funil e desenhado para filtrar e converter:
+Meta Ads / Google Ads -> Landing Page Nexu (Formulario de Qualificacao) -> Webhook -> CRM (Pipedrive/Salesforce) -> Notificacao VIP (WhatsApp/Telegram).
 
-## 2. Integracao Meta Ads (Facebook e Instagram)
-A landing page deve capturar o lead e enviar os dados via Webhook para o CRM.
-- Configurar o Pixel do Facebook para rastrear o botao de conversao (WhatsApp).
-- Utilizar API de Conversoes para garantir a precisao dos dados de captacao.
+## 2. Integracao com CRM
+Os dados coletados (Patrimonio e Renda) devem ser mapeados automaticamente para o CRM:
+* **Filtro Automatico:** Leads com patrimonio acima de R$ 5M recebem tag "Prioridade Maxima".
+* **Atribuicao:** O lead e direcionado imediatamente para um socio ou advogado senior.
 
-## 3. Conexao com WhatsApp
-O WhatsApp e o canal de fechamento principal.
-- Utilizar botoes de acao direta (CTA) com mensagens pre-definidas para identificar a origem (ex: "Vi seu site e quero saber mais sobre Blindagem").
-- Integrar com API oficial ou ferramentas de automacao para registrar o inicio da conversa automaticamente no CRM.
+## 3. Conexao Meta (Facebook/Instagram)
+* **Pixel e API de Conversoes:** Instalados para medir nao apenas o clique, mas a conclusao do formulario de qualificacao.
+* **Publicos Personalizados:** Criacao de Lookalike baseado nos leads que preencheram as faixas mais altas de patrimonio.
 
-## 4. Alertas via Telegram
-Para agilidade interna, configuramos um bot de alerta:
-- Toda vez que um formulario e preenchido ou o botao de WhatsApp e clicado, um bot envia os dados do lead (Nome, Servico de Interesse) para o grupo de atendimento no Telegram.
-- Isso garante que o advogado receba a notificacao em tempo real, mesmo fora do CRM.
+## 4. WhatsApp e Telegram
+* **WhatsApp Business API:** Integrado ao CRM para registro de todas as interacoes.
+* **Telegram:** Utilizado para alertas internos imediatos a equipe juridica sempre que um lead de alto valor solicita contato.
 
-## 5. CRM (Gestao de Relacionamento)
-Utilizamos o CRM para funil de vendas:
-- Entrada Automatica: Leads do site entram direto no estagio de Triagem.
-- Historico: Toda interacao via WhatsApp deve ser logada para consulta futura.
-- Follow-up: Alertas de tarefas para casos que nao converteram na primeira reuniao.
-
-## 6. Ferramentas de Automacao
-Para manter o custo operacional baixo e a alta performance:
-- Zapier ou Make: Para orquestrar o envio de dados entre a Landing Page e o CRM.
-- Webhooks Nativos: Para integracao direta onde for possivel, evitando latencia.
+## 5. Ferramentas Recomendadas
+* **CRM:** Pipedrive ou Notion (para controle personalizado).
+* **Automacao:** Make (antigo Integromat) ou Zapier para as pontes de dados.
+* **Analytics:** Google Search Console e Clarity para entender o comportamento do usuario na pagina.
