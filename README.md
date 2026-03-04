@@ -1,32 +1,21 @@
-# DV Advoga - Planejamento de Captacao High-Ticket
+# Nexu - Planejamento Patrimonial e Sucessorio de Alto Nivel
 
-Este repositorio contem o planejamento e a implementacao da landing page de captacao estrategica para o escritorio DV Advoga (Dyjann Muller Aguiar Varela).
+Este repositorio abriga o projeto da landing page institucional da Nexu Advogados. O foco aqui e a captacao qualificada de leads com alto patrimonio, utilizando uma linguagem sobria, direta e profissional.
 
-## Objetivo
-Transformar o trafego qualificado em leads de alto valor (High-Ticket), focando em empresarios e familias com necessidade de protecao patrimonial e gestao de riscos juridicos. Sem enrolacao, o foco e conversao direta.
+## Identidade Visual e Conceito
+A pagina foi construida com uma paleta de cores focada em seriedade e autoridade:
+* **Cinza Chumbo:** Transmite solidez e modernidade.
+* **Madeira (Mahogany):** Remete ao ambiente tradicional e seguro de escritórios de advocacia de elite.
+* **Ouro:** Simboliza a preservação do valor e a excelência dos serviços prestados.
 
-## Planejamento da Pagina
+## Estrutura de Captacao Qualificada
+Diferente de paginas de massa, a Nexu utiliza um formulario de pre-qualificacao diretamente na interface:
+* **Segmentacao por Patrimonio:** Filtra leads conforme o volume de bens.
+* **Segmentacao por Renda:** Identifica a capacidade financeira e o perfil do cliente.
+* **Urgencia Estrategica:** Direciona o atendimento para a dor principal (Holding, Blindagem, etc).
 
-### 1. Estrutura de Conversao (Funil)
-* Hero Section: Proposta de valor clara voltada para a seguranca do patrimonio e urgencia juridica.
-* Segmentacao Ativa: Tres caminhos claros para o usuario (Holding/Blindagem, Auditoria, Assessoria Mensal). Isso reduz o atrito e ja pre-qualifica o interesse do lead.
-* Autoridade e Prova Cientifica: Destaque para a Tese da Desvantagem Social, conferindo um diferencial tecnico inalcancavel por concorrentes generalistas.
-* CTA Direto: Botoes integrados ao WhatsApp Business para resposta imediata.
+## Objetivo do Negocio
+O objetivo central e transformar trafego frio e qualificado em reunioes de diagnostico estrategico, eliminando curiosos e focando em clientes que buscam seguranca juridica para seus maiores ativos.
 
-### 2. Persona Alvo (ICP)
-* Perfil: Empresarios PMEs (Faturamento R$50k - R$200k/mes).
-* Localizacao: Natal/RN (Foco Ponta Negra) e expansao nacional.
-
-## Integracoes e CRM
-Para detalhes tecnicos sobre como conectar esta pagina ao Meta Ads, WhatsApp, Telegram e CRM, consulte o documento: [STACK.md](STACK.md)
-
-## Tecnologias
-- HTML5 / CSS3 Moderno
-- Font Awesome para iconografia tecnica
-- Google Fonts (Playfair Display)
-
-## Conformidade Etica
-O marketing e estritamente informativo, conforme o Provimento 205/2021 da OAB, focando em educar o cliente sobre riscos e solucoes juridicas.
-
-
-<!-- deploy trigger -->
+## Documentacao Tecnica
+O projeto utiliza HTML5 puro, CSS3 com variaveis customizadas para facilitar ajustes de marca e fontes elegantes (Cinzel e Montserrat) para garantir uma leitura confortavel e imponente.
