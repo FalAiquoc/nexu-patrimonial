@@ -3,90 +3,98 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nexu Advogados | Estratégia Patrimonial de Alto Nível</title>
+    <title>DV Advoga | Blindagem Patrimonial e Sucessão de Elite</title>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gunmetal: #1a1c1e;
-            --wood: #3d2b1f;
-            --gold: #d4af37;
-            --gold-light: #f4d03f;
-            --text-light: #e0e0e0;
-            --text-muted: #8d8d8d;
-            --bg-accent: #2c2f33;
-            --border: rgba(212, 175, 55, 0.2);
+            --gunmetal: #121416;
+            --wood: #2a1e16;
+            --gold: #c5a059;
+            --gold-light: #e0c08d;
+            --text-light: #f5f5f5;
+            --text-muted: #a0a0a0;
+            --bg-card: #1c1f22;
+            --border: rgba(197, 160, 89, 0.15);
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { 
             background-color: var(--gunmetal); 
             color: var(--text-light); 
-            line-height: 1.7; 
+            line-height: 1.6; 
             font-family: 'Montserrat', sans-serif;
             overflow-x: hidden;
         }
 
-        h1, h2, h3, .brand { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 1px; color: var(--gold); }
+        h1, h2, h3, .brand { font-family: 'Cinzel', serif; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; }
         
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
 
         /* Navigation */
-        nav { padding: 30px 0; border-bottom: 1px solid var(--border); background: rgba(0,0,0,0.2); }
+        nav { padding: 30px 0; background: transparent; position: absolute; width: 100%; top: 0; z-index: 100; }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-size: 1.8rem; text-decoration: none; }
+        .brand { font-size: 1.8rem; color: var(--gold); }
 
-        /* Hero */
-        .hero { padding: 120px 0 80px; position: relative; border-bottom: 5px solid var(--wood); background: linear-gradient(rgba(26,28,30,0.95), rgba(26,28,30,0.95)), url('https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&w=1920&q=80'); background-size: cover; background-attachment: fixed; }
-        .hero h1 { font-size: 3rem; margin-bottom: 25px; line-height: 1.1; text-transform: uppercase; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .hero p { font-size: 1.2rem; color: var(--text-muted); max-width: 700px; margin-bottom: 40px; font-weight: 300; }
-
-        /* Form Lead Capture */
-        .lead-capture { background: var(--wood); padding: 50px; border-radius: 4px; box-shadow: 0 20px 40px rgba(0,0,0,0.6); position: relative; margin-top: -60px; z-index: 10; border: 1px solid var(--gold); }
-        .lead-capture h2 { color: var(--gold-light); margin-bottom: 25px; font-size: 1.8rem; text-align: center; }
-        .form-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
-        .form-group { margin-bottom: 20px; }
-        label { display: block; font-size: 0.8rem; text-transform: uppercase; color: var(--gold); margin-bottom: 8px; font-weight: 600; }
-        input, select { 
-            width: 100%; padding: 15px; background: rgba(0,0,0,0.3); border: 1px solid var(--border); 
-            color: white; border-radius: 2px; font-family: inherit; font-size: 1rem;
+        /* Hero (Ref: viniciussnunes) */
+        .hero { 
+            height: 100vh; 
+            display: flex; 
+            align-items: center; 
+            background: linear-gradient(90deg, #121416 40%, rgba(18,20,22,0.6) 100%), url('https://images.unsplash.com/photo-1560250097-0b93528c311a?auto=format&fit=crop&w=1920&q=80'); 
+            background-size: cover; 
+            background-position: center right;
+            position: relative;
         }
-        input:focus { border-color: var(--gold); outline: none; }
+        .hero-content { max-width: 600px; }
+        .hero h1 { font-size: 3.5rem; margin-bottom: 20px; line-height: 1.1; color: #fff; }
+        .hero h1 span { color: var(--gold); }
+        .hero p { font-size: 1.2rem; color: var(--text-muted); margin-bottom: 40px; font-weight: 300; border-left: 2px solid var(--gold); padding-left: 20px; }
+
+        .btn-primary { 
+            display: inline-block; background: var(--gold); color: var(--gunmetal); 
+            padding: 18px 45px; text-decoration: none; font-weight: 700; 
+            text-transform: uppercase; font-size: 0.9rem; letter-spacing: 2px;
+            transition: 0.3s; border: 1px solid var(--gold);
+        }
+        .btn-primary:hover { background: transparent; color: var(--gold); }
+
+        /* Service Cards (Ref Style) */
+        .section { padding: 120px 0; }
+        .section-header { text-align: center; margin-bottom: 80px; }
+        .section-header h2 { font-size: 2.2rem; margin-bottom: 15px; color: var(--gold); }
+        .section-header p { color: var(--text-muted); max-width: 700px; margin: 0 auto; font-size: 1.1rem; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 30px; }
+        .card { 
+            background: var(--bg-card); padding: 50px 40px; border: 1px solid var(--border); 
+            transition: 0.4s; text-align: center; position: relative; overflow: hidden;
+        }
+        .card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: var(--gold); transform: scaleX(0); transition: 0.4s; }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); }
+        .card:hover::before { transform: scaleX(1); }
         
-        .btn-submit { 
-            grid-column: span 2; background: var(--gold); color: var(--gunmetal); 
-            border: none; padding: 20px; font-weight: 800; text-transform: uppercase; 
-            font-family: 'Cinzel', serif; cursor: pointer; transition: 0.3s; margin-top: 10px;
+        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 30px; }
+        .card h3 { font-size: 1.4rem; margin-bottom: 20px; color: #fff; }
+        .card p { color: var(--text-muted); font-size: 0.95rem; margin-bottom: 30px; }
+        
+        .card-link { 
+            color: var(--gold); text-decoration: none; font-weight: 600; 
+            text-transform: uppercase; font-size: 0.8rem; letter-spacing: 1px;
+            border-bottom: 1px solid var(--gold); padding-bottom: 5px;
         }
-        .btn-submit:hover { background: var(--gold-light); transform: scale(1.01); }
 
-        /* Value Prop */
-        .section { padding: 100px 0; }
-        .title-group { text-align: center; margin-bottom: 70px; }
-        .title-group h2 { font-size: 2.2rem; margin-bottom: 15px; }
-        .title-group p { color: var(--text-muted); font-size: 1.1rem; }
+        /* OAB Compliance Section */
+        .oab-note { background: var(--wood); padding: 80px 0; border-top: 1px solid var(--border); }
+        .oab-content { text-align: center; }
+        .oab-content p { font-style: italic; color: var(--gold-light); font-size: 1.1rem; max-width: 800px; margin: 0 auto; line-height: 1.8; }
 
-        .features { display: grid; grid-template-columns: repeat(3, 1fr); gap: 40px; }
-        .feature-item { padding: 40px; background: var(--bg-accent); border: 1px solid var(--border); transition: 0.4s; }
-        .feature-item:hover { border-color: var(--gold); transform: translateY(-5px); }
-        .feature-item i { font-size: 2rem; color: var(--gold); margin-bottom: 25px; }
-        .feature-item h3 { margin-bottom: 15px; font-size: 1.4rem; color: #fff; }
-        .feature-item p { color: var(--text-muted); font-size: 0.95rem; }
-
-        /* Trust Signals */
-        .trust-bar { background: #000; padding: 40px 0; text-align: center; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .trust-content { display: flex; justify-content: space-around; flex-wrap: wrap; opacity: 0.7; }
-        .trust-content span { font-family: 'Cinzel', serif; font-size: 1.2rem; letter-spacing: 2px; }
-
-        footer { padding: 80px 0; background: #000; border-top: 2px solid var(--wood); text-align: center; }
-        .footer-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
-        .footer-legal { font-size: 0.8rem; color: var(--text-muted); margin-top: 30px; }
+        footer { padding: 60px 0; text-align: center; background: #000; color: var(--text-muted); font-size: 0.8rem; }
+        .footer-logo { font-size: 1.5rem; color: var(--gold); margin-bottom: 15px; }
 
         @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .form-grid { grid-template-columns: 1fr; }
-            .btn-submit { grid-column: span 1; }
-            .features { grid-template-columns: 1fr; }
+            .hero h1 { font-size: 2.5rem; }
+            .hero { background-position: center; }
         }
     </style>
 </head>
@@ -94,109 +102,62 @@
 
     <nav>
         <div class="container nav-content">
-            <a href="#" class="brand">NEXU ADVOGADOS</a>
-            <div style="font-size: 0.9rem; color: var(--gold);">ESTRATÉGIA PATRIMONIAL</div>
+            <div class="brand">DV ADVOGA</div>
+            <div style="font-size: 0.8rem; letter-spacing: 2px; color: var(--gold);">EXCELÊNCIA JURÍDICA</div>
         </div>
     </nav>
 
     <section class="hero">
         <div class="container">
-            <h1>Blindagem e Sucessão <br>de Alta Complexidade</h1>
-            <p>Soluções jurídicas discretas e inteligentes para famílias e empresários que valorizam a preservação do legado e a eficiência tributária absoluta.</p>
+            <div class="hero-content">
+                <h1>Segurança <span>Patrimonial</span> e Legado Familiar</h1>
+                <p>Estratégias jurídicas personalizadas para a proteção de bens e sucessão inteligente. Orientação técnica baseada na autoridade e no sigilo absoluto.</p>
+                <a href="#diagnostico" class="btn-primary">Solicitar Diagnóstico Técnico</a>
+            </div>
         </div>
     </section>
-
-    <section class="container">
-        <div class="lead-capture">
-            <h2>Diagnóstico de Viabilidade Patrimonial</h2>
-            <form action="#" method="POST" class="form-grid">
-                <div class="form-group">
-                    <label>Nome Completo</label>
-                    <input type="text" placeholder="Ex: João da Silva" required>
-                </div>
-                <div class="form-group">
-                    <label>E-mail Corporativo</label>
-                    <input type="email" placeholder="seu@email.com" required>
-                </div>
-                <div class="form-group">
-                    <label>Telefone / WhatsApp</label>
-                    <input type="tel" placeholder="(00) 00000-0000" required>
-                </div>
-                <div class="form-group">
-                    <label>Volume Patrimonial Estimado</label>
-                    <select required>
-                        <option value="" disabled selected>Selecione uma faixa</option>
-                        <option value="1m">R$ 1 Milhão a R$ 5 Milhões</option>
-                        <option value="5m">R$ 5 Milhões a R$ 20 Milhões</option>
-                        <option value="20m">Acima de R$ 20 Milhões</option>
-                        <option value="multi">Multifamiliar / Corporate</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Renda Mensal Familiar</label>
-                    <select required>
-                        <option value="" disabled selected>Selecione uma faixa</option>
-                        <option value="20k">Até R$ 50.000</option>
-                        <option value="100k">R$ 50.000 a R$ 200.000</option>
-                        <option value="top">Acima de R$ 200.000</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Principal Urgência</label>
-                    <select required>
-                        <option value="holding">Holding Familiar</option>
-                        <option value="tributario">Redução de Impostos</option>
-                        <option value="sucessao">Planejamento Sucessório</option>
-                        <option value="blindagem">Proteção de Bens</option>
-                    </select>
-                </div>
-                <button type="submit" class="btn-submit">Solicitar Análise Estratégica</button>
-            </form>
-        </div>
-    </section>
-
-    <div class="trust-bar">
-        <div class="container trust-content">
-            <span>SIGILO ABSOLUTO</span>
-            <span>ÉTICA OAB</span>
-            <span>EXCELÊNCIA JURÍDICA</span>
-        </div>
-    </div>
 
     <section class="section">
         <div class="container">
-            <div class="title-group">
-                <h2>O Legado Exige Inteligência</h2>
-                <p>Por que os maiores grupos econômicos do país utilizam nossas estruturas.</p>
+            <div class="section-header">
+                <h2>Conheça Nossas Especialidades</h2>
+                <p>Informação qualificada para decisões de alto impacto patrimonial.</p>
             </div>
-            <div class="features">
-                <div class="feature-item">
-                    <i class="fas fa-balance-scale"></i>
-                    <h3>Isolamento de Riscos</h3>
-                    <p>Separação jurídica total entre o patrimônio operacional e o acervo de bens da família, garantindo proteção contra contingências.</p>
+            <div class="grid">
+                <div class="card">
+                    <i class="fas fa-shield-halved"></i>
+                    <h3>Holding Familiar</h3>
+                    <p>Estruturação societária focada na preservação de ativos e eficiência tributária na sucessão.</p>
+                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-landmark"></i>
-                    <h3>Holding de Gestão</h3>
-                    <p>Controle centralizado e profissional dos bens, permitindo a governança familiar sem os conflitos da gestão direta.</p>
+                <div class="card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>Blindagem Jurídica</h3>
+                    <p>Isolamento de riscos operacionais para garantir a integridade dos bens conquistados.</p>
+                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
-                <div class="feature-item">
-                    <i class="fas fa-percent"></i>
-                    <h3>Eficiência Fiscal</h3>
-                    <p>Aproveitamento integral dos benefícios previstos em lei para redução drástica de ITCMD e impostos imobiliários.</p>
+                <div class="card">
+                    <i class="fas fa-scroll"></i>
+                    <h3>Sucessão Ética</h3>
+                    <p>Planejamento sucessório preventivo para evitar litígios e garantir a continuidade do legado.</p>
+                    <a href="#" class="card-link">Saiba Mais</a>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <section class="oab-note" id="diagnostico">
+        <div class="container oab-content">
+            <p>"O planejamento patrimonial não é apenas uma estratégia financeira, é um ato de cuidado com o seu legado e a tranquilidade da sua família. Nossa missão é oferecer o respaldo jurídico necessário para que sua sucessão ocorra de forma segura e econômica."</p>
+            <a href="https://wa.me/seu-numero" class="btn-primary" style="margin-top: 40px;">Falar com Especialista</a>
         </div>
     </section>
 
     <footer>
         <div class="container">
-            <div class="footer-logo">NEXU</div>
-            <p>Nexu Advogados Associados - Especialistas em Direito Patrimonial</p>
-            <div class="footer-legal">
-                © 2025 Nexu. Todos os direitos reservados. <br>
-                Este conteúdo é estritamente informativo e cumpre os requisitos do Provimento nº 205/2021 do Conselho Federal da OAB.
-            </div>
+            <div class="footer-logo">DV</div>
+            <p>DV Advogados Associados - OAB/RN XXX.XXX</p>
+            <p style="margin-top: 10px;">© 2026. Conteúdo informativo em conformidade com o Código de Ética e Disciplina da OAB.</p>
         </div>
     </footer>
 
