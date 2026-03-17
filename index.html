@@ -8,14 +8,16 @@
     <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Montserrat:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
         :root {
-            --gunmetal: #121416;
-            --wood: #2a1e16;
-            --gold: #c5a059;
-            --gold-light: #e0c08d;
-            --text-light: #f5f5f5;
-            --text-muted: #a0a0a0;
-            --bg-card: #1c1f22;
-            --border: rgba(197, 160, 89, 0.15);
+            --gunmetal: #0a0b0d;
+            --wood: #1a1410;
+            --gold: #d4af37;
+            --gold-light: #f1d592;
+            --text-light: #ffffff;
+            --text-muted: #b0b0b0;
+            --bg-card: rgba(255, 255, 255, 0.03);
+            --border: rgba(212, 175, 55, 0.2);
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
         }
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body { background-color: var(--gunmetal); color: var(--text-light); line-height: 1.6; font-family: 'Montserrat', sans-serif; overflow-x: hidden; }
@@ -23,11 +25,11 @@
         .container { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
         
         /* Navigation */
-        nav { padding: 30px 0; background: transparent; position: absolute; width: 100%; top: 0; z-index: 100; }
+        nav { padding: 20px 0; background: rgba(10, 11, 13, 0.8); backdrop-filter: blur(10px); position: fixed; width: 100%; top: 0; z-index: 1000; border-bottom: 1px solid var(--glass-border); }
         .nav-content { display: flex; justify-content: space-between; align-items: center; }
-        .brand { font-size: 1.5rem; color: var(--gold); text-decoration: none; }
-        .nav-links { display: flex; gap: 30px; }
-        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; }
+        .brand { font-size: 1.4rem; color: var(--gold); text-decoration: none; font-weight: 800; white-space: nowrap; }
+        .nav-links { display: flex; gap: 20px; }
+        .nav-links a { color: var(--text-light); text-decoration: none; font-size: 0.8rem; text-transform: uppercase; letter-spacing: 1px; transition: 0.3s; font-weight: 600; }
         .nav-links a:hover { color: var(--gold); }
 
         /* Hero */
@@ -45,12 +47,12 @@
         .section-title p { color: var(--text-muted); font-size: 1.1rem; }
 
         /* Cards */
-        .grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 30px; }
-        .card { background: var(--bg-card); padding: 50px 30px; border: 1px solid var(--border); border-radius: 8px; transition: 0.5s; text-align: center; }
-        .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 30px rgba(0,0,0,0.5); }
-        .card i { font-size: 2.5rem; color: var(--gold); margin-bottom: 25px; }
-        .card h3 { font-size: 1.3rem; margin-bottom: 20px; color: var(--gold-light); }
-        .card p { color: var(--text-muted); font-size: 0.95rem; }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 25px; }
+        .card { background: var(--bg-card); padding: 40px 25px; border: 1px solid var(--glass-border); border-radius: 12px; transition: 0.5s; text-align: center; backdrop-filter: blur(5px); }
+        .card:hover { transform: translateY(-10px); border-color: var(--gold); box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1); background: rgba(255, 255, 255, 0.05); }
+        .card i { font-size: 2.2rem; color: var(--gold); margin-bottom: 20px; display: block; }
+        .card h3 { font-size: 1.2rem; margin-bottom: 15px; color: var(--gold-light); }
+        .card p { color: var(--text-muted); font-size: 0.9rem; }
 
         /* Qualification Form (New) */
         .qualification-section { background: var(--wood); position: relative; overflow: hidden; }
@@ -74,9 +76,12 @@
         .footer-logo { font-family: 'Cinzel', serif; font-size: 2rem; color: var(--gold); margin-bottom: 20px; }
 
         @media (max-width: 768px) {
-            .hero-content h1 { font-size: 2.5rem; }
+            .nav-content { flex-direction: column; gap: 15px; padding: 10px 0; }
+            .hero-content h1 { font-size: 2.2rem; }
+            .hero-content p { font-size: 1rem; }
             .grid { grid-template-columns: 1fr; }
-            .form-card { padding: 30px; }
+            .form-card { padding: 25px; margin: 0 15px; }
+            .form-step h2 { font-size: 1.5rem; }
         }
     </style>
 </head>
@@ -120,6 +125,16 @@
                     <i class="fas fa-scroll"></i>
                     <h3>SUCESSÃO ÉTICA</h3>
                     <p>Planejamento sucessório preventivo para evitar litígios e garantir a continuidade do legado.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-gavel"></i>
+                    <h3>DEFESA EM EXECUÇÃO</h3>
+                    <p>Expertise em defesa em execução fiscal, civil e trabalhista para garantir seus bens e direitos.</p>
+                </div>
+                <div class="card">
+                    <i class="fas fa-file-invoice-dollar"></i>
+                    <h3>DIREITO FISCAL</h3>
+                    <p>Expertise em defesa administrativa em matéria fiscal perante órgãos municipais, estaduais e federais.</p>
                 </div>
             </div>
         </div>
@@ -175,8 +190,8 @@
     <footer>
         <div class="container">
             <div class="footer-logo">DV</div>
-            <p>DV Advogados Associados - OAB/RN XXX.XXX</p>
-            <p style="margin-top: 10px; opacity: 0.6;">© 2026. Conteúdo informativo em conformidade com o Código de Ética e Disciplina da OAB.</p>
+            <p>DYJANN MÜLLER AGUIAR VARELA | OAB/RN 16675</p>
+            <p style="margin-top: 10px; opacity: 0.6;">© 2026 DV Advoga - Todos os direitos reservados. <br> Conteúdo informativo em conformidade com o Código de Ética e Disciplina da OAB.</p>
         </div>
     </footer>
 
@@ -223,7 +238,7 @@
                           `*WhatsApp:* ${whatsapp}`;
             
             const encodedMsg = encodeURIComponent(message);
-            window.open(`https://wa.me/558499999999?text=${encodedMsg}`, '_blank');
+            window.open(`{{WHATSAPP_LINK}}?text=${encodedMsg}`, '_blank');
         }
     </script>
 </body>
