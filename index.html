@@ -171,46 +171,112 @@
             font-size: 1.1rem;
         }
 
-        /* Cards */
+        /* Cards & Accordion */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
         }
 
         .card {
             background: var(--bg-card);
-            padding: 40px 25px;
+            padding: 30px;
             border: 1px solid var(--glass-border);
             border-radius: 12px;
-            transition: 0.5s;
-            text-align: center;
-            backdrop-filter: blur(5px);
+            transition: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            text-align: left;
+            backdrop-filter: blur(10px);
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
         }
 
         .card:hover {
-            transform: translateY(-10px);
             border-color: var(--gold);
-            box-shadow: 0 10px 40px rgba(212, 175, 55, 0.1);
             background: rgba(255, 255, 255, 0.05);
         }
 
-        .card i {
-            font-size: 2.2rem;
-            color: var(--gold);
+        .card.active {
+            background: rgba(212, 175, 55, 0.05);
+            border-color: var(--gold);
+            transform: scale(1.02);
+        }
+
+        .card-header {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 0;
+            transition: margin 0.3s;
+        }
+
+        .card.active .card-header {
             margin-bottom: 20px;
-            display: block;
+        }
+
+        .card i {
+            font-size: 2rem;
+            color: var(--gold);
+            transition: 0.3s;
         }
 
         .card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 15px;
+            font-size: 1.1rem;
             color: var(--gold-light);
+            margin: 0;
+            flex-grow: 1;
         }
 
-        .card p {
+        .card-toggle {
+            color: var(--gold);
+            font-size: 1.2rem;
+            transition: 0.4s;
+        }
+
+        .card.active .card-toggle {
+            transform: rotate(45deg);
+        }
+
+        .card-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s;
+            opacity: 0;
+        }
+
+        .card.active .card-content {
+            max-height: 500px;
+            opacity: 1;
+        }
+
+        .card-content p {
             color: var(--text-muted);
-            font-size: 0.9rem;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-top: 10px;
+            padding-top: 15px;
+            border-top: 1px solid rgba(212, 175, 55, 0.1);
+        }
+
+        .card-content ul {
+            list-style: none;
+            margin-top: 15px;
+        }
+
+        .card-content li {
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            margin-bottom: 8px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .card-content li::before {
+            content: '⬥';
+            color: var(--gold);
         }
 
         /* Qualification Form (New) */
@@ -413,10 +479,56 @@
                 margin-bottom: 5px;
             }
         }
+
+        /* WhatsApp Floating */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            width: 60px;
+            height: 60px;
+            background-color: #25d366;
+            color: #fff;
+            border-radius: 50px;
+            text-align: center;
+            font-size: 30px;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            transition: 0.3s;
+            animation: pulse-whatsapp 2s infinite;
+        }
+
+        .whatsapp-float:hover {
+            transform: scale(1.1);
+            background-color: #128c7e;
+        }
+
+        @keyframes pulse-whatsapp {
+            0% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.7); }
+            70% { box-shadow: 0 0 0 15px rgba(37, 211, 102, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(37, 211, 102, 0); }
+        }
+
+        @media (max-width: 768px) {
+            .whatsapp-float {
+                bottom: 20px;
+                right: 20px;
+                width: 50px;
+                height: 50px;
+                font-size: 25px;
+            }
+        }
     </style>
 </head>
 
 <body>
+    <a href="https://wa.me/5511999999999?text=Ol%C3%A1!%20Gostaria%20de%20um%20diagn%C3%B3stico%20patrimonial." class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
     <nav>
         <div class="container nav-content">
             <a href="#" class="brand">DV ADVOGA</a>
@@ -440,35 +552,87 @@
         <div class="container">
             <div class="section-title">
                 <h2>Nossas Especialidades</h2>
-                <p>Informação qualificada para decisões de alto impacto patrimonial.</p>
+                <p>Abra cada especialidade para entender como protegemos seu patrimônio.</p>
             </div>
             <div class="grid">
-                <div class="card">
-                    <i class="fas fa-landmark"></i>
-                    <h3>HOLDING FAMILIAR</h3>
-                    <p>Estruturação societária focada na preservação de ativos e eficiência tributária na sucessão.</p>
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <i class="fas fa-landmark"></i>
+                        <h3>HOLDING FAMILIAR</h3>
+                        <span class="card-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>A Holding Familiar é o ápice da estratégia sucessória. Através de uma estrutura societária profissional, garantimos que seu patrimônio seja gerido com eficiência tributária, evitando os custos astronômicos de um inventário judicial.</p>
+                        <ul>
+                            <li>Redução drástica de carga tributária (ITCMD/ITBI).</li>
+                            <li>Proteção contra litígios sucessórios.</li>
+                            <li>Continuidade imediata da gestão dos bens.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-shield-alt"></i>
-                    <h3>BLINDAGEM JURÍDICA</h3>
-                    <p>Isolamento de riscos operacionais para garantir a integridade dos bens conquistados.</p>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <i class="fas fa-shield-alt"></i>
+                        <h3>BLINDAGEM PATRIMONIAL</h3>
+                        <span class="card-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Utilizamos mecanismos legais e lícitos para criar camadas de proteção entre sua operação comercial e seu patrimônio pessoal. O objetivo é garantir que imprevistos no negócio não destruam as conquistas de uma vida inteira.</p>
+                        <ul>
+                            <li>Isolamento de riscos operacionais e civis.</li>
+                            <li>Prevenção contra penhoras e bloqueios indevidos.</li>
+                            <li>Estruturação de offshores e fundos exclusivos.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-scroll"></i>
-                    <h3>SUCESSÃO ÉTICA</h3>
-                    <p>Planejamento sucessório preventivo para evitar litígios e garantir a continuidade do legado.</p>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <i class="fas fa-scroll"></i>
+                        <h3>SUCESSÃO DE ELITE</h3>
+                        <span class="card-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Planejamento sucessório focado no legado e na ética. Projetamos a transmissão de bens de forma que a harmonia familiar seja preservada, garantindo que a próxima geração receba não apenas ativos, mas princípios e estabilidade.</p>
+                        <ul>
+                            <li>Testamentos e doações com reserva de usufruto.</li>
+                            <li>Protocolos familiares de governança.</li>
+                            <li>Mediação e prevenção de conflitos.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-gavel"></i>
-                    <h3>DEFESA EM EXECUÇÃO</h3>
-                    <p>Expertise em defesa em execução fiscal, civil e trabalhista para garantir seus bens e direitos.
-                    </p>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <i class="fas fa-gavel"></i>
+                        <h3>DEFESA TÉCNICA</h3>
+                        <span class="card-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Expertise combativa em execuções de alta complexidade. Protegemos seus direitos e bens contra abusos em processos fiscais, civis e trabalhistas, utilizando todas as teses jurídicas de vanguarda.</p>
+                        <ul>
+                            <li>Defesa em Execução Fiscal e Cível.</li>
+                            <li>Embargos de Terceiro e Exceções de Pré-executividade.</li>
+                            <li>Liberação de bens e contas bloqueadas.</li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card">
-                    <i class="fas fa-file-invoice-dollar"></i>
-                    <h3>DIREITO FISCAL</h3>
-                    <p>Expertise em defesa administrativa em matéria fiscal perante órgãos municipais, estaduais e
-                        federais.</p>
+
+                <div class="card" onclick="toggleCard(this)">
+                    <div class="card-header">
+                        <i class="fas fa-file-invoice-dollar"></i>
+                        <h3>DIREITO FISCAL</h3>
+                        <span class="card-toggle"><i class="fas fa-plus"></i></span>
+                    </div>
+                    <div class="card-content">
+                        <p>Gestão estratégica de passivos tributários. Atuamos na redução de multas, juros e na anulação de autuações fiscais indevidas, garantindo a saúde financeira e o fluxo de caixa do seu patrimônio.</p>
+                        <ul>
+                            <li>Recuperação de tributos pagos indevidamente.</li>
+                            <li>Consultoria para redução lícita de impostos.</li>
+                            <li>Planejamento tributário para grandes fortunas.</li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
@@ -547,6 +711,17 @@
 
     <script>
         let leadData = {};
+
+        function toggleCard(card) {
+            const allCards = document.querySelectorAll('.card');
+            const isActive = card.classList.contains('active');
+
+            allCards.forEach(c => c.classList.remove('active'));
+
+            if (!isActive) {
+                card.classList.add('active');
+            }
+        }
 
         function nextStep(step) {
             if (step === 2 && !document.getElementById('lead-name').value) {
