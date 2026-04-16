@@ -98,6 +98,119 @@
             color: var(--gold);
         }
 
+        /* Portfolio Specific Styles */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+
+        .portfolio-card {
+            background: rgba(255, 255, 255, 0.03);
+            border: 1px solid var(--glass-border);
+            padding: 40px;
+            position: relative;
+            overflow: hidden;
+            transition: 0.4s;
+            backdrop-filter: blur(10px);
+        }
+
+        .portfolio-card:hover {
+            border-color: var(--gold);
+            background: rgba(212, 175, 55, 0.05);
+            transform: translateY(-5px);
+        }
+
+        .portfolio-number {
+            position: absolute;
+            top: 10px;
+            right: 20px;
+            font-size: 8rem;
+            font-family: 'Cinzel', serif;
+            color: var(--gold);
+            opacity: 0.05;
+            z-index: 0;
+            pointer-events: none;
+        }
+
+        .portfolio-tag {
+            display: inline-block;
+            font-size: 0.65rem;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            color: var(--gold);
+            border: 1px solid var(--gold);
+            padding: 4px 12px;
+            margin-bottom: 20px;
+            border-radius: 20px;
+        }
+
+        .portfolio-card h3 {
+            color: var(--gold);
+            margin-bottom: 15px;
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+        }
+
+        .portfolio-card p {
+            color: var(--text-muted);
+            line-height: 1.8;
+            font-size: 0.95rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        .highlight-gold {
+            color: var(--gold-light);
+            font-weight: 600;
+        }
+
+        .portfolio-subtitle {
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            color: var(--gold);
+            opacity: 0.8;
+            margin-top: 10px;
+        }
+
+        .portfolio-card.full-width {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.08) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .fiscal-internal-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+        }
+
+        @media (max-width: 992px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+            .portfolio-card.full-width {
+                grid-column: span 1;
+            }
+            .fiscal-internal-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .portfolio-card {
+                padding: 30px 20px;
+            }
+            .portfolio-number {
+                font-size: 5rem;
+                top: -10px;
+            }
+        }
+
         /* Hero */
         .hero {
             min-height: 100vh;
@@ -537,6 +650,7 @@
             <a href="#" class="brand">DV ADVOGA</a>
             <div class="nav-links">
                 <a href="#especialidades">Especialidades</a>
+                <a href="#portfolio">Portfólio</a>
                 <a href="#diagnostico">Diagnóstico</a>
             </div>
         </div>
@@ -635,6 +749,70 @@
                             <li>Consultoria para redução lícita de impostos.</li>
                             <li>Planejamento tributário para grandes fortunas.</li>
                         </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    <section id="portfolio" style="background: rgba(255, 255, 255, 0.01); padding: 100px 0;">
+        <div class="container">
+            <div class="section-title">
+                <h2>Portfólio de Autoridade</h2>
+                <p class="portfolio-subtitle">Casos Reais e Resultados Incontestáveis</p>
+            </div>
+            
+            <div class="portfolio-grid">
+                <!-- Holding Familiar -->
+                <div class="portfolio-card">
+                    <span class="portfolio-number">01</span>
+                    <span class="portfolio-tag">Estruturação</span>
+                    <h3>Holding Familiar</h3>
+                    <p>
+                        Com <span class="highlight-gold">resultados práticos e consolidados</span>, estruturamos sociedades focadas na preservação de ativos e na <span class="highlight-gold">máxima eficiência tributária</span>. Atendemos clientes de grande porte que hoje desfrutam de total segurança.
+                    </p>
+                </div>
+
+                <!-- Blindagem Patrimonial -->
+                <div class="portfolio-card">
+                    <span class="portfolio-number">02</span>
+                    <span class="portfolio-tag">Proteção</span>
+                    <h3>Blindagem Patrimonial</h3>
+                    <p>
+                        Implementamos estratégias jurídicas sofisticadas de <span class="highlight-gold">isolamento de riscos operacionais</span>. Nosso escritório conta com um portfólio de clientes satisfeitos, entregando <span class="highlight-gold">resultados reais</span> na proteção do patrimônio.
+                    </p>
+                </div>
+
+                <!-- Sucessão Ética -->
+                <div class="portfolio-card">
+                    <span class="portfolio-number">03</span>
+                    <span class="portfolio-tag">Sucessão</span>
+                    <h3>Sucessão Ética</h3>
+                    <p>
+                        Atuamos com planejamento sucessório preventivo, <span class="highlight-gold">eliminando riscos de litígios</span>. Nossa experiência garante a famílias uma sucessão estratégica, preservando a <span class="highlight-gold">continuidade do legado</span>.
+                    </p>
+                </div>
+
+                <!-- Defesa em Execução -->
+                <div class="portfolio-card">
+                    <span class="portfolio-number">04</span>
+                    <span class="portfolio-tag">Defesa Técnica</span>
+                    <h3>Defesa em Execução</h3>
+                    <p>
+                        Guiamos o processo judicial exatamente para o <span class="highlight-gold">resultado almejado</span>. Atuamos de forma cirúrgica para anular processos de execução, garantindo a proteção imediata dos seus direitos e ativos.
+                    </p>
+                </div>
+
+                <!-- Direito Fiscal -->
+                <div class="portfolio-card full-width">
+                    <span class="portfolio-number">05</span>
+                    <span class="portfolio-tag">Impacto Fiscal</span>
+                    <h3>Direito Fiscal</h3>
+                    <div class="fiscal-internal-grid">
+                        <p>
+                            Destacamo-nos pela <span class="highlight-gold">reestruturação tributária</span> no segmento de locação imobiliária, onde <span class="highlight-gold">neutralizamos quase integralmente</span> os impactos da reforma, praticamente zerando o aumento da tributação do setor.
+                        </p>
+                        <p>
+                            Nossa orientação <span class="highlight-gold">já salvou condomínios da extinção</span> e recuperou empresas com dificuldades severas — sem necessidade de Recuperação Judicial —, aplicando reestruturações tributárias profundas e eficazes.
+                        </p>
                     </div>
                 </div>
             </div>
