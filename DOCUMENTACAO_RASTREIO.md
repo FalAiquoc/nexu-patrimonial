@@ -19,7 +19,11 @@ Para ter controle total sobre quem visita o site e como eles interagem, recomend
 *   **Recursos:** Mostra volume de acessos, fontes de tráfego (Google Orgânico, Insta, Direto), dados demográficos (estado, dispositivo) e métricas de funil (ex: quantos iniciaram o formulário vs. quantos clicaram no botão final).
 *   **Acesso e Custo:** Gratuito. Acessado via [analytics.google.com](https://analytics.google.com).
 
-### 🟣 Meta Pixel / API de Conversões (Para Campanhas Patrocinadas)
+### 🟣 Meta Pixel / API de Conversões (Para Campanhas Patrocinadas) — ✅ INSTALADO
+*   **Status:** Instalado em 24/04/2026.
+*   **Pixel ID:** `4444287532481746`
+*   **Evento Ativo:** `PageView` (dispara a cada visita).
+*   **Posição no Código:** `index.html` → `<head>`, linhas 652-668.
 *   **Para que serve:** Otimizar campanhas pagas (Facebook/Instagram Ads).
 *   **Recursos:** Avisa ao algoritmo da Meta quando alguém realiza uma "Conversão" (ex: clica no link do WhatsApp ou responde o formulário). Isso ajuda a IA do anúncio a buscar pessoas com perfil similar.
 *   **Acesso:** Configurado no Gerenciador de Negócios da Meta (Facebook).

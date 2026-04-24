@@ -1,6 +1,9 @@
 # 📄 Status Geral de Entrega - Nexus Patrimonial
 
-**Data:** 16 de Abril de 2026  
+> **🌐 Domínio:** Este diretório (`nexu-patrimonial/`) é o **site principal dvadvoga.com.br**.
+> NÃO confundir com `dvadvoga-reset-app/` (que é apenas o microsserviço de reset de senha).
+
+**Última Atualização:** 24 de Abril de 2026  
 **Status Atual:** ✅ CONCLUÍDO & LIMPO  
 **Ambiente:** Produção (Local & Sincronizado com GitHub)
 
@@ -24,6 +27,13 @@
 
 ### 4. Inteligência de Analytics
 - **Documentação Estratégica:** Criação do arquivo `DOCUMENTACAO_RASTREIO.md` detalhando as ferramentas (Clarity, GA4, Pixel) e a lógica de exclusão de tráfego interno via link administrativo.
+
+### 5. Meta Pixel (Facebook/Instagram Ads)
+- **Data:** 24/04/2026
+- **Pixel ID:** `4444287532481746`
+- **Evento:** `PageView` (disparado em toda visita)
+- **Posição no Código:** `index.html`, dentro do `<head>`, linhas 652-668.
+- **Inclui `<noscript>` fallback:** Sim.
 
 ---
 
