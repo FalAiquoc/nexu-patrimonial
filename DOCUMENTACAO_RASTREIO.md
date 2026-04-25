@@ -19,14 +19,23 @@ Para ter controle total sobre quem visita o site e como eles interagem, recomend
 *   **Recursos:** Mostra volume de acessos, fontes de tráfego (Google Orgânico, Insta, Direto), dados demográficos (estado, dispositivo) e métricas de funil (ex: quantos iniciaram o formulário vs. quantos clicaram no botão final).
 *   **Acesso e Custo:** Gratuito. Acessado via [analytics.google.com](https://analytics.google.com).
 
-### 🟣 Meta Pixel / API de Conversões (Para Campanhas Patrocinadas) — ✅ INSTALADO
-*   **Status:** Instalado em 24/04/2026.
+### 🟣 Meta Pixel / API de Conversões — ✅ INSTALADO (CONDICIONAL)
+*   **Status:** Instalado e integrado ao Banner de Cookies.
 *   **Pixel ID:** `4444287532481746`
-*   **Evento Ativo:** `PageView` (dispara a cada visita).
-*   **Posição no Código:** `index.html` → `<head>`, linhas 652-668.
-*   **Para que serve:** Otimizar campanhas pagas (Facebook/Instagram Ads).
-*   **Recursos:** Avisa ao algoritmo da Meta quando alguém realiza uma "Conversão" (ex: clica no link do WhatsApp ou responde o formulário). Isso ajuda a IA do anúncio a buscar pessoas com perfil similar.
-*   **Acesso:** Configurado no Gerenciador de Negócios da Meta (Facebook).
+*   **Evento Ativo:** `PageView`.
+*   **Posição no Código:** `index.html` → `<head>`.
+*   **Lógica de Ativação:** Só carrega após o usuário aceitar "Cookies de Marketing" no banner LGPD.
+*   **Acesso:** Gerenciador de Negócios da Meta.
+
+### 🟠 Google Ads (Tag AW) — ✅ INSTALADO
+*   **Status:** Instalado com ID `AW-18117702042`.
+*   **Lógica de Ativação:** Integrado ao **Google Consent Mode v2**. O disparo é bloqueado até o consentimento de marketing.
+*   **Uso:** Remarketing e acompanhamento de conversões de anúncios.
+
+### ⚪ Google Tag Manager (GTM) — ✅ INSTALADO
+*   **ID:** `GTM-MKFGTBZT`.
+*   **Uso:** Centralizador de tags e scripts de terceiros.
+
 
 ---
 
@@ -70,4 +79,20 @@ Quando o site capta um formulário preenchido ou a pessoa clica no botão do Wha
 2.  **Webhooks no Formulário:** Podemos alterar os botões do nosso formulário em etapas para não apenas enviarem para o WhatsApp, mas também dispararem um **Post via Fetch (Webhook)** direto para o *Dokploy / Nexus CRM*. Assim o Lead já entra com Name, Patrimônio Previsto e Demanda gravados automaticamente no funil.
 
 ---
-*Documento gerado como base de consulta. Para iniciar as integrações, solicite ao arquiteto de software a inserção dos scripts.*
+---
+
+## 5. Consentimento e LGPD (Banner de Cookies) — ✅ ATIVO
+
+O site agora possui um sistema de gestão de consentimento rigoroso conforme a LGPD brasileira:
+
+1.  **Banner Flutuante:** Aparece na primeira visita.
+2.  **Consent Mode v2:** O site comunica diretamente ao Google o estado do consentimento (`denied` por padrão).
+3.  **Categorias:**
+    *   **Essenciais:** Carregam sempre (estruturais).
+    *   **Análise:** Google Analytics e Microsoft Clarity.
+    *   **Marketing:** Google Ads e Meta Pixel.
+4.  **Botão de Preferências:** Um ícone flutuante de cookie no canto inferior esquerdo permite ao usuário mudar suas escolhas a qualquer momento.
+
+---
+*Documento atualizado em 25/04/2026 após implementação da stack completa de rastreio e privacidade.*
+

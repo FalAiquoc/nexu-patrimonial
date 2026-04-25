@@ -649,26 +649,60 @@
         }
     </style>
 
-    <!-- Meta Pixel Code -->
+    <!-- Google Tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18117702042"></script>
     <script>
-    !function(f,b,e,v,n,t,s)
-    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-    n.queue=[];t=b.createElement(e);t.async=!0;
-    t.src=v;s=b.getElementsByTagName(e)[0];
-    s.parentNode.insertBefore(t,s)}(window, document,'script',
-    'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', '4444287532481746');
-    fbq('track', 'PageView');
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        
+        // Consent Mode Default (Deny everything until user accepts)
+        gtag('consent', 'default', {
+            'ad_storage': 'denied',
+            'ad_user_data': 'denied',
+            'ad_personalization': 'denied',
+            'analytics_storage': 'denied',
+            'wait_for_update': 500
+        });
+
+        gtag('js', new Date());
+        gtag('config', 'AW-18117702042');
     </script>
-    <noscript><img height="1" width="1" style="display:none"
-    src="https://www.facebook.com/tr?id=4444287532481746&ev=PageView&noscript=1"
-    /></noscript>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-MKFGTBZT');</script>
+    <!-- End Google Tag Manager -->
+
+    <!-- Meta Pixel Code (Wrapped in Consent Check) -->
+    <script>
+    function loadMetaPixel() {
+        if (!window.fbq) {
+            !function(f,b,e,v,n,t,s)
+            {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+            n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+            if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+            n.queue=[];t=b.createElement(e);t.async=!0;
+            t.src=v;s=b.getElementsByTagName(e)[0];
+            s.parentNode.insertBefore(t,s)}(window, document,'script',
+            'https://connect.facebook.net/en_US/fbevents.js');
+            fbq('init', '4444287532481746');
+        }
+        fbq('track', 'PageView');
+    }
+    </script>
     <!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MKFGTBZT"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
     <a href="https://wa.me/558499792525?text=Ol%C3%A1!%20Gostaria%20de%20um%20diagn%C3%B3stico%20patrimonial." class="whatsapp-float" target="_blank">
         <i class="fab fa-whatsapp"></i>
     </a>
@@ -980,6 +1014,310 @@
             window.open(`${whatsappLink}?text=${encodedMsg}`, '_blank');
         }
     </script>
+    <!-- Banner de Cookies LGPD - DV ADVOGA -->
+    <style>
+        :root {
+            --cookie-primary: #c5a059; /* Dourado do site */
+            --cookie-dark: #1a1c1e;    /* Gunmetal escuro */
+            --cookie-text: #ffffff;
+            --cookie-bg: rgba(26, 28, 30, 0.95);
+        }
+
+        #lgpd-cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 600px;
+            background: var(--cookie-bg);
+            color: var(--cookie-text);
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+            z-index: 9999;
+            display: none;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(197, 160, 89, 0.2);
+            font-family: system-ui, -apple-system, sans-serif;
+        }
+
+        .cookie-content h3 {
+            margin: 0 0 10px 0;
+            color: var(--cookie-primary);
+            font-size: 1.2rem;
+        }
+
+        .cookie-content p {
+            font-size: 0.9rem;
+            line-height: 1.5;
+            margin-bottom: 20px;
+            color: #d1d1d1;
+        }
+
+        .cookie-actions {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+
+        .cookie-btn {
+            padding: 10px 20px;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 0.85rem;
+            transition: all 0.3s ease;
+            border: none;
+            flex: 1;
+            min-width: 140px;
+        }
+
+        .btn-accept { background: var(--cookie-primary); color: #000; }
+        .btn-accept:hover { background: #b48e47; transform: translateY(-2px); }
+
+        .btn-reject { background: transparent; color: #fff; border: 1px solid #444; }
+        .btn-reject:hover { background: rgba(255,255,255,0.1); }
+
+        .btn-settings { background: transparent; color: var(--cookie-primary); text-decoration: underline; font-size: 0.8rem; border: none; min-width: auto; }
+
+        /* Modal de Personalização */
+        #cookie-settings-modal {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.8);
+            z-index: 10000;
+            display: none;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            background: var(--cookie-dark);
+            width: 90%;
+            max-width: 500px;
+            padding: 30px;
+            border-radius: 16px;
+            border: 1px solid var(--cookie-primary);
+        }
+
+        .setting-item {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 0;
+            border-bottom: 1px solid #333;
+        }
+
+        .setting-info h4 { margin: 0; font-size: 1rem; color: var(--cookie-primary); }
+        .setting-info p { margin: 5px 0 0 0; font-size: 0.8rem; color: #aaa; }
+
+        .switch {
+            position: relative;
+            display: inline-block;
+            width: 44px;
+            height: 24px;
+        }
+
+        .switch input { opacity: 0; width: 0; height: 0; }
+
+        .slider {
+            position: absolute;
+            cursor: pointer;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-color: #444;
+            transition: .4s;
+            border-radius: 24px;
+        }
+
+        .slider:before {
+            position: absolute;
+            content: "";
+            height: 18px; width: 18px;
+            left: 3px; bottom: 3px;
+            background-color: white;
+            transition: .4s;
+            border-radius: 50%;
+        }
+
+        input:checked + .slider { background-color: var(--cookie-primary); }
+        input:checked + .slider:before { transform: translateX(20px); }
+        input:disabled + .slider { opacity: 0.5; cursor: not-allowed; }
+
+        /* Botão Flutuante de Preferências */
+        #cookie-preferences-trigger {
+            position: fixed;
+            bottom: 20px;
+            left: 20px;
+            background: var(--cookie-dark);
+            color: var(--cookie-primary);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.3);
+            z-index: 9998;
+            border: 1px solid var(--cookie-primary);
+            transition: all 0.3s ease;
+        }
+
+        #cookie-preferences-trigger:hover { transform: scale(1.1); }
+
+        @media (max-width: 768px) {
+            #lgpd-cookie-banner { bottom: 0; left: 0; width: 100%; transform: none; border-radius: 12px 12px 0 0; }
+            .cookie-actions { flex-direction: column; }
+            .cookie-btn { width: 100%; }
+        }
+    </style>
+
+    <div id="lgpd-cookie-banner">
+        <div class="cookie-content">
+            <h3>Privacidade e Cookies 🛡️</h3>
+            <p>O site da <strong>DV ADVOGA</strong> utiliza cookies para melhorar sua experiência, analisar tráfego (GA4/Clarity) e personalizar anúncios (Google Ads). Ao clicar em "Aceitar todos", você concorda com o uso de todas as tecnologias.</p>
+            <div class="cookie-actions">
+                <button class="cookie-btn btn-accept" onclick="acceptAllCookies()">Aceitar todos</button>
+                <button class="cookie-btn btn-reject" onclick="rejectAllCookies()">Rejeitar todos</button>
+                <button class="cookie-btn btn-settings" onclick="openCookieSettings()">Personalizar cookies</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-settings-modal">
+        <div class="modal-content">
+            <h3 style="color: var(--cookie-primary); margin-top: 0;">Preferências de Cookies</h3>
+            
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4>Essenciais</h4>
+                    <p>Necessários para o funcionamento do site.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" checked disabled>
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4>Análise</h4>
+                    <p>GA4 e Clarity (Mapas de calor).</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cookie-analytics">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="setting-item">
+                <div class="setting-info">
+                    <h4>Marketing</h4>
+                    <p>Google Ads e Remarketing.</p>
+                </div>
+                <label class="switch">
+                    <input type="checkbox" id="cookie-marketing">
+                    <span class="slider"></span>
+                </label>
+            </div>
+
+            <div class="cookie-actions" style="margin-top: 30px;">
+                <button class="cookie-btn btn-accept" onclick="saveCustomPreferences()">Salvar escolhas</button>
+            </div>
+        </div>
+    </div>
+
+    <div id="cookie-preferences-trigger" title="Preferências de Cookies" onclick="openCookieSettings()">
+        <i class="fas fa-cookie-bite"></i>
+    </div>
+
+    <script>
+        const COOKIE_PREF_KEY = 'cookie_preferences';
+
+        function checkInitialConsent() {
+            const prefs = localStorage.getItem(COOKIE_PREF_KEY);
+            if (!prefs) {
+                document.getElementById('lgpd-cookie-banner').style.display = 'block';
+            } else {
+                applyPreferences(JSON.parse(prefs));
+            }
+        }
+
+        function acceptAllCookies() {
+            const prefs = { necessary: true, analytics: true, marketing: true };
+            saveAndApply(prefs);
+        }
+
+        function rejectAllCookies() {
+            const prefs = { necessary: true, analytics: false, marketing: false };
+            saveAndApply(prefs);
+        }
+
+        function saveCustomPreferences() {
+            const prefs = {
+                necessary: true,
+                analytics: document.getElementById('cookie-analytics').checked,
+                marketing: document.getElementById('cookie-marketing').checked
+            };
+            saveAndApply(prefs);
+            closeCookieSettings();
+        }
+
+        function saveAndApply(prefs) {
+            localStorage.setItem(COOKIE_PREF_KEY, JSON.stringify(prefs));
+            document.getElementById('lgpd-cookie-banner').style.display = 'none';
+            applyPreferences(prefs);
+        }
+
+        function applyPreferences(prefs) {
+            // Update Google Consent Mode
+            if (typeof gtag === 'function') {
+                gtag('consent', 'update', {
+                    'ad_storage': prefs.marketing ? 'granted' : 'denied',
+                    'ad_user_data': prefs.marketing ? 'granted' : 'denied',
+                    'ad_personalization': prefs.marketing ? 'granted' : 'denied',
+                    'analytics_storage': prefs.analytics ? 'granted' : 'denied'
+                });
+            }
+
+            if (prefs.analytics) enableAnalyticsScripts();
+            if (prefs.marketing) enableMarketingScripts();
+        }
+
+        function enableAnalyticsScripts() {
+            console.log('✅ Analytics Enabled (GA4/Clarity)');
+            // Aqui você pode inicializar scripts que não usam o Consent Mode nativo
+            // Ex: Microsoft Clarity
+            (function(c,l,a,r,i,t,y){
+                if (window.clarity) return;
+                c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
+                t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+                y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
+            })(window, document, "clarity", "script", "MKFGTBZT"); // Exemplo de ID
+        }
+
+        function enableMarketingScripts() {
+            console.log('✅ Marketing Enabled (Google Ads/Pixel)');
+            if (typeof loadMetaPixel === 'function') {
+                loadMetaPixel();
+            }
+        }
+
+        function openCookieSettings() {
+            const prefs = JSON.parse(localStorage.getItem(COOKIE_PREF_KEY) || '{"analytics":false,"marketing":false}');
+            document.getElementById('cookie-analytics').checked = prefs.analytics;
+            document.getElementById('cookie-marketing').checked = prefs.marketing;
+            document.getElementById('cookie-settings-modal').style.display = 'flex';
+        }
+
+        function closeCookieSettings() {
+            document.getElementById('cookie-settings-modal').style.display = 'none';
+        }
+
+        window.onload = checkInitialConsent;
+    </script>
 </body>
+
 
 </html>
